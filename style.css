@@ -18,6 +18,10 @@ body {
     background-size: cover;
 }
 
+.hero__gallery-cell {
+    width: 100%;
+}
+
 .hero__hamburger {
     position: absolute;
     top: 2.5rem;
@@ -74,7 +78,8 @@ body {
     line-height: 1.9rem;
 }
 
-.focus__description {
+.focus__description,
+.about__description {
     font-size: .7rem;
     color: rgb(165, 164, 164);
     line-height: 1.2rem;
@@ -99,4 +104,28 @@ body {
     position: absolute;
     margin-left: 3rem;
     top: 0;
+}
+
+.about__title {
+    padding: 4rem 2rem 1rem 2rem;
+    text-transform: uppercase;
+    font-size: .9rem;
+    letter-spacing: .2rem;
+}
+
+.about__description {
+    padding: 0rem 2rem 2rem 2rem;
+}
+
+.about__lightimg,
+.about__darkimg {
+    width: 100%;
+}
+
+.attribution {
+    font-size: .7rem;
+    text-align: center;
+    color: black;
+    padding: 1rem 0;
+    opacity: 0.6
 }
