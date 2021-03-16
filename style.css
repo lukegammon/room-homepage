@@ -12,14 +12,16 @@ body {
 
 .hero {
     position: relative;
-    background: url("./images/mobile-image-hero-1.jpg");
     height: 55vh;
-    background-repeat: no-repeat;
-    background-size: cover;
 }
 
-.hero__gallery-cell {
+.carousel-slide {
+    display: flex;
     width: 100%;
+}
+
+.image1 {
+    height: 55vh;
 }
 
 .hero__hamburger {
