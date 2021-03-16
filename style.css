@@ -13,16 +13,40 @@ body {
 .hero {
     position: relative;
     height: 55vh;
-}
-
-.carousel-slide {
-    display: flex;
     width: 100%;
+    overflow: hidden;
 }
 
-.image1 {
-    height: 55vh;
+.slider {
+    position: relative;
+    height: 100%;
+    width: 500%;
+    display: flex;
 }
+
+.slider__image1 {
+    height: 100%;
+    background: url('./images/mobile-image-hero-1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 20%;
+}
+.slider__image2 {
+    height: 100%;
+    background: url('./images/mobile-image-hero-2.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 20%;
+    
+}
+.slider__image3 {
+    height: 100%;
+    background: url('./images/mobile-image-hero-3.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 20%;
+}
+
 
 .hero__hamburger {
     position: absolute;
@@ -65,8 +89,8 @@ body {
     background: black;
 }
 
-.hero__slider-left,
-.hero__slider-right {
+#hero__slider-left,
+#hero__slider-right {
     width: .7rem;
 }
 
