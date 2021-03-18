@@ -5,6 +5,7 @@ document.addEventListener( 'DOMContentLoaded', function () {
         'type': 'loop',
         'height': '55vh',
         'arrows': 'slider',
+        'pagination': false,
     } ).mount();
     // custom styling of arrows
     const arrows = splide.root.children[0];
@@ -13,61 +14,55 @@ document.addEventListener( 'DOMContentLoaded', function () {
     arrows.style.position = "absolute";
     arrows.style.bottom = "1.5rem";
     arrows.style.right = "-0.85rem";
-    arrows.style.width = "9.5rem";
+    arrows.style.width = "9rem";
     nextArrow.style.background = "black";
     prevArrow.style.background = "black";
     nextArrow.style.opacity = "1";
     prevArrow.style.opacity = "1";
-    nextArrow.style.height = "3rem";
-    prevArrow.style.height = "3rem";
-    nextArrow.style.width = "4rem";
-    prevArrow.style.width = "4rem";
+    nextArrow.style.padding = "1.5rem 2rem";
+    prevArrow.style.padding = "1.5rem 2rem";
     nextArrow.style.borderRadius = "0";
     prevArrow.style.borderRadius = "0";
     nextArrow.style.color = "white";
+    prevArrow.style.color = "white";
     nextArrow.innerHTML = `<img class="arrow-next" src="./images/icon-angle-right.svg" style="pointer-events:none">`;
     prevArrow.innerHTML = `<img class="arrow-prev" src="./images/icon-angle-left.svg" style="pointer-events:none">`;
+    //-------------------------
+
+    // Change body text depending on which image is active (add more if statements if adding more content)
+    // index refers to which image is currently active.
+    const focusTitle = document.querySelector(".focus__title");
+    const focusDescription = document.querySelector(".focus__description");
+    splide.on("active", (e)=> {
+        if(e.index === 0) { 
+            focusTitle.innerHTML =  "Discover innovative ways to decorate";
+            focusDescription.innerHTML = "We provide unmatched quality, comfort, and style for property owners across the country. Our experts combine form and function in bringing your vision to life. Create a room in your own style with our collection and make your property a reflection of you and what you love.";
+        } else if(e.index === 1) {
+            focusTitle.innerHTML = "We are available all across the globe"
+            focusDescription.innerHTML = "With stores all over the world, it's easy for you to find furniture for your home or place of business. Locally, we’re in most major cities throughout the country. Find the branch nearest you using our store locator. Any questions? Don't hesitate to contact us today.";
+        } else {
+            focusTitle.innerHTML = "Manufactured with the best materials"
+            focusDescription.innerHTML = "Our modern furniture store provide a high level of quality. Our company has invested in advanced technology to ensure that every product is made as perfect and as consistent as possible. With three decades of experience in this industry, we understand what customers want for their home and office.";
+        }
+    })
 } );
 
+const hamburgerLogo = document.querySelector(".hero__hamburger");
+const menuLinks = document.querySelector(".hero__links");
+const logo = document.querySelector(".hero__logo");
+const overlay = document.querySelector(".overlay");
 
-/*const slider = document.querySelector(".slider");
-const sliderImages = document.querySelectorAll(".slider div");
-const heightOutput = document.querySelector('#height');
-const widthOutput = document.querySelector('#width');
-
-const prevButton = document.querySelector("#hero__slider-left");
-const nextButton = document.querySelector("#hero__slider-right");
-
-let counter = 1;
-const size = sliderImages[0].clientWidth;
-
-// Set slider to actual first image (not clone)
-slider.style.transform = 'translateX(' + (-size * counter) + 'px)';
-
-nextButton.addEventListener("click", () => {
-    if(counter >= sliderImages.length - 1) return;
-    sliderImages[counter + 1].style.display = "block";
-    slider.style.transition = "transform 0.5s ease-in-out";
-    counter++;
-    slider.style.transform = 'translateX(' + (-size * counter) + 'px)';
-});
-
-prevButton.addEventListener("click", () => {
-    if(counter <= 0) return;
-    slider.style.transition = "transform 0.5s ease-in-out";
-    counter--;
-    slider.style.transform = 'translateX(' + (-size * counter) + 'px)';
-});
-
-slider.addEventListener("transitionend", () => {
-    if(sliderImages[counter].id === "lastClone") {
-        slider.style.transition = "none";
-        counter = 1;
-        slider.style.transform = 'translateX(' + (-size * counter) + 'px)';
+hamburgerLogo.addEventListener("click", () => {
+    if(hamburgerLogo.classList.contains("menu-active")) {
+        hamburgerLogo.src = "./images/icon-hamburger.svg";
+        hamburgerLogo.classList.remove("menu-active");
+        menuLinks.style.display = "none";
+        logo.style.display = "block";
+    } else {
+        hamburgerLogo.classList.add("menu-active");
+        menuLinks.style.display = "flex";
+        logo.style.display = "none";
+        hamburgerLogo.src = "./images/icon-close.svg";
     }
-    if(sliderImages[counter].id === "firstClone") {
-        slider.style.transition = "none";
-        counter = sliderImages.length - 2;
-        slider.style.transform = 'translateX(' + (-size * counter) + 'px)';
-    }
-})*/
+})
+
