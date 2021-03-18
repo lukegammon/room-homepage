@@ -42,7 +42,7 @@ document.addEventListener( 'DOMContentLoaded', function () {
             focusDescription.innerHTML = "With stores all over the world, it's easy for you to find furniture for your home or place of business. Locally, we’re in most major cities throughout the country. Find the branch nearest you using our store locator. Any questions? Don't hesitate to contact us today.";
         } else {
             focusTitle.innerHTML = "Manufactured with the best materials"
-            focusDescription.innerHTML = "Our modern furniture store provide a high level of quality. Our company has invested in advanced technology to ensure that every product is made as perfect and as consistent as possible. With three decades of experience in this industry, we understand what customers want for their home and office.";
+            focusDescription.innerHTML = "Our modern furniture store provide a high level of quality. Our company has invested in advanced technology to ensure that every product is made as perfect and as consistent as possible. With three decades of experience in this industry, we understand what customers want.";
         }
     })
 } );
@@ -50,19 +50,25 @@ document.addEventListener( 'DOMContentLoaded', function () {
 const hamburgerLogo = document.querySelector(".hero__hamburger");
 const menuLinks = document.querySelector(".hero__links");
 const logo = document.querySelector(".hero__logo");
-const overlay = document.querySelector(".overlay");
+//Overlay for when modal / menu is open
+const overlay = document.querySelector(".overlay"); 
 
 hamburgerLogo.addEventListener("click", () => {
     if(hamburgerLogo.classList.contains("menu-active")) {
+        overlay.style.display = "none";
         hamburgerLogo.src = "./images/icon-hamburger.svg";
         hamburgerLogo.classList.remove("menu-active");
+        hamburgerLogo.style.position = "absolute";
         menuLinks.style.display = "none";
         logo.style.display = "block";
     } else {
+        overlay.style.display = "block";
+        hamburgerLogo.src = "./images/icon-close.svg";
+        hamburgerLogo.style.position = "fixed";
         hamburgerLogo.classList.add("menu-active");
         menuLinks.style.display = "flex";
         logo.style.display = "none";
-        hamburgerLogo.src = "./images/icon-close.svg";
+        
     }
 })
 
