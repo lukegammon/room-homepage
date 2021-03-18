@@ -14,39 +14,8 @@ body {
     position: relative;
     height: 55vh;
     width: 100%;
-    overflow: hidden;
+    background: wheat;
 }
-
-.slider {
-    position: relative;
-    height: 100%;
-    width: 500%;
-    display: flex;
-}
-
-.slider__image1 {
-    height: 100%;
-    background: url('./images/mobile-image-hero-1.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 20%;
-}
-.slider__image2 {
-    height: 100%;
-    background: url('./images/mobile-image-hero-2.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 20%;
-    
-}
-.slider__image3 {
-    height: 100%;
-    background: url('./images/mobile-image-hero-3.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 20%;
-}
-
 
 .hero__hamburger {
     position: absolute;
@@ -76,23 +45,6 @@ body {
     display: none;
 }
 /*-------------------*/
-
-.hero__slider {
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    bottom: 0;
-    right: 0;
-    width: 8rem;
-    height: 3.3rem;
-    background: black;
-}
-
-#hero__slider-left,
-#hero__slider-right {
-    width: .7rem;
-}
 
 .focus {
     padding: 4rem 2rem;
@@ -153,5 +105,5 @@ body {
     text-align: center;
     color: black;
     padding: 1rem 0;
-    opacity: 0.6
+    opacity: 0.6;
 }

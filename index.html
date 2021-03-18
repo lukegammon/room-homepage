@@ -6,17 +6,13 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <title>Frontend Mentor | Room homepage</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
 </head>
 <body>
   <header>
     <section class="hero">
-        <div class="slider">
-            <div class="slider__image3" id="firstClone"></div>
-            <div class="slider__image1"></div>
-            <div class="slider__image2"></div>
-            <div class="slider__image3"></div>
-            <div class="slider__image1" id="lastClone"></div>
-        </div>
+
+    
       </div>
       <nav>
         <img class="hero__hamburger" src="images/icon-hamburger.svg" alt="menu">
@@ -28,10 +24,25 @@
         </ul>
         <h1 class="hero__logo">room</h1>
       </nav>
-      <div class="hero__slider">
-        <img id="hero__slider-left" src="./images/icon-angle-left.svg" alt="left">
-        <img id="hero__slider-right" src="./images/icon-angle-right.svg" alt="right">
-      </div>
+        <!-- image slider using splidejs-->
+        <div id="image-slider" class="splide">
+          <div class="splide__track">
+            <ul class="splide__list">
+              <li class="splide__slide">
+                <img src="./images/mobile-image-hero-1.jpg">
+              </li>
+              <li class="splide__slide">
+                <img src="./images/mobile-image-hero-2.jpg">
+              </li>
+              <li class="splide__slide">
+                <img src="./images/mobile-image-hero-3.jpg">
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+        <!-------------------------------->
+      
     </section>
   </header>
 
@@ -88,6 +99,7 @@
   Shop now
 
   -->
+  <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
   <script src="./app.js"></script>
 </body>
 </html>
