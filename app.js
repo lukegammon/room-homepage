@@ -7,14 +7,14 @@ document.addEventListener( 'DOMContentLoaded', function () {
         'arrows': 'slider',
         'pagination': false,
     } ).mount();
-    // custom styling of arrows
+    // Custom styling of arrows (splide js only allows API style changing of buttons etc.)
     const arrows = splide.root.children[0];
     const nextArrow = splide.Components.Arrows.arrows.next;
     const prevArrow = splide.Components.Arrows.arrows.prev;
     arrows.style.position = "absolute";
     arrows.style.bottom = "1.5rem";
     arrows.style.right = "-0.85rem";
-    arrows.style.width = "9rem";
+    arrows.style.width = "9.6rem";
     nextArrow.style.background = "black";
     prevArrow.style.background = "black";
     nextArrow.style.opacity = "1";
@@ -24,6 +24,42 @@ document.addEventListener( 'DOMContentLoaded', function () {
     nextArrow.style.borderRadius = "0";
     prevArrow.style.borderRadius = "0";
     nextArrow.style.color = "white";
+    prevArrow.style.color = "white";
+
+    // Add hover states 
+    let clicked = false;
+    nextArrow.onmouseover = function() {
+        this.style.backgroundColor = "hsl(0, 0%, 40%)";
+        clicked = true;
+    };
+    nextArrow.onmouseout = function() {
+        this.style.backgroundColor = "black";
+        clicked = true;
+    };
+    prevArrow.onmouseover = function() {
+        this.style.backgroundColor = "hsl(0, 0%, 40%)";
+        clicked = true;
+    };
+    prevArrow.onmouseout = function() {
+        this.style.backgroundColor = "black";
+        clicked = true;
+    };
+
+    // Reset background button hover change on press (mobile issue)
+    prevArrow.addEventListener("click", () => {
+        if(clicked) {
+            prevArrow.style.background = "black";
+            clicked = false;
+        } 
+    });
+    nextArrow.addEventListener("click", () => {
+        if(clicked) {
+            nextArrow.style.background = "black";
+            clicked = false;
+        } 
+    });
+
+
     prevArrow.style.color = "white";
     nextArrow.innerHTML = `<img class="arrow-next" src="./images/icon-angle-right.svg" style="pointer-events:none">`;
     prevArrow.innerHTML = `<img class="arrow-prev" src="./images/icon-angle-left.svg" style="pointer-events:none">`;
@@ -68,7 +104,6 @@ hamburgerLogo.addEventListener("click", () => {
         hamburgerLogo.classList.add("menu-active");
         menuLinks.style.display = "flex";
         logo.style.display = "none";
-        
     }
 })
 

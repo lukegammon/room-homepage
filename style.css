@@ -80,6 +80,11 @@ body {
     letter-spacing: .6rem;
     background: transparent;
     border: none;
+    cursor: pointer;
+}
+
+.focus__shop-btn:hover{
+    opacity: 0.6;
 }
 
 .focus__shop-btn__arrow {
@@ -132,5 +137,15 @@ body {
         opacity: 0;
     } to {
         opacity: .4;
+    }
+}
+
+
+/* DESKTOP VIEW */
+@media only screen and (min-width:1030px) {
+    body{
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
     }
 }
