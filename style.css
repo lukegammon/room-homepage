@@ -11,8 +11,9 @@ body {
 }
 
 .hero {
-    position: relative;
-    height: 55vh;
+    position: absolute;
+    height: 10vh;
+    width: 100%;
     overflow: hidden;
 }
 
@@ -33,6 +34,7 @@ body {
     font-weight: 500;
     color: white;
     z-index: 10;
+    cursor: pointer;
 }
 
 /* mobile first toggle*/
@@ -48,6 +50,9 @@ body {
     font-size: .8rem;
     font-weight: 600;
     z-index: 14;
+}
+.hero__links li {
+    cursor: pointer;
 }
 /*-------------------*/
 
@@ -143,9 +148,63 @@ body {
 
 /* DESKTOP VIEW */
 @media only screen and (min-width:1030px) {
-    body{
-        display: grid;
-        grid-template-rows: 1fr 1fr;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
+    body {
+        max-width: 80%;
+        margin: 3rem auto;
+    }
+    .hero {
+        position: absolute;
+        height: 10vh;
+        width: 60%;
+    }
+    .hero__logo {
+        left: 6rem;
+        top: 2rem;
+    }
+    .hero__links {
+        display: flex;
+        position: absolute;
+        align-items: center;
+        justify-content: space-around;
+        width: 30%;
+        left: 10rem;
+        color: white;
+        background: none;
+        padding: 2.6rem 1rem 2.6rem 5rem;
+        list-style: none;
+        font-size: .8rem;
+        font-weight: 600;
+        z-index: 14;
+    }
+    .hero__links li {
+        margin-left: 4rem;
+    }
+
+    .hero__hamburger{
+        display: none;
+    }
+
+    .focus {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .focus-container {
+        width: 60%;
+    }
+
+    .about {
+        display: flex;
+        flex: 1;
+        max-height: 100%;
+    }
+    .about__main-container {
+        padding: 2rem;
+    }
+    .splide {
+        width: 60%;
+    }
+    .desktop-view {
+        display: flex;
     }
 }

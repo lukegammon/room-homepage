@@ -11,8 +11,6 @@
 <body>
   <header>
     <section class="hero">
-
-    
       </div>
       <nav>
         <img class="hero__hamburger" src="images/icon-hamburger.svg" alt="menu">
@@ -24,29 +22,30 @@
         </ul>
         <h1 class="hero__logo">room</h1>
       </nav>
-        <!-- image slider using splidejs-->
-        <div id="image-slider" class="splide">
-          <div class="splide__track">
-            <ul class="splide__list">
-              <li class="splide__slide">
-                <img src="./images/mobile-image-hero-1.jpg">
-              </li>
-              <li class="splide__slide">
-                <img src="./images/mobile-image-hero-2.jpg" class="slide-desktop">
-              </li>
-              <li class="splide__slide">
-                <img src="./images/mobile-image-hero-3.jpg" class="slide-desktop">
-              </li>
-            </ul>
-          </div>
-        </div>
-        <!-------------------------------->
-      
     </section>
   </header>
-
   <main>
+    <div class="desktop-view">
+            <!-- image slider using splidejs-->
+            <div id="image-slider" class="splide">
+              <div class="splide__track">
+                <ul class="splide__list">
+                  <li class="splide__slide">
+                    <img src="./images/mobile-image-hero-1.jpg" class="slide-img1">
+                  </li>
+                  <li class="splide__slide">
+                    <img src="./images/mobile-image-hero-2.jpg" class="slide-img2">
+                  </li>
+                  <li class="splide__slide">
+                    <img src="./images/mobile-image-hero-3.jpg" class="slide-img3">
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <!-------------------------------->
+          
     <section class="focus">
+      <div class="focus-container">
       <h2 class="focus__title">Discover innovative ways to decorate</h2>
       <p class="focus__description">
         We provide unmatched quality, comfort, and style for property owners across the country. 
@@ -57,17 +56,20 @@
         <span class="focus__shop-btn__title">SHOP NOW</span>
         <span class="focus__shop-btn__arrow">&rarr;</span>
       </button>
+    </div>
     </section>
-
+  </div>
     <section class="about">
       <img class="about__darkimg" src="./images/image-about-dark.jpg" alt="dark-image">
-      <h3 class="about__title">About our furniture</h2>
+      <div class="about__main-container">
+      <h3 class="about__title">About our furniture</h3>
       <p class="about__description">
         Our multifunctional collection blends design and function to suit your individual taste.
         Make each room unique, or pick a cohesive theme that best express your interests and what
         inspires you. Find the furniture pieces you need, from traditional to contemporary styles
         or anything in between. Product specialists are available to help you create your dream space.
       </p>
+    </div>
       <img class="about__lightimg" src="./images/image-about-light.jpg" alt="light-image">
     </section>
   </main>
