@@ -1,3 +1,6 @@
+Next Time i would choose a different image slider (splidejs has many limitations). 
+Full Desktop View and also Iphone was my main goal with this project as layouts differ a lot.
+
 # Frontend Mentor - Room homepage
 
 ![Design preview for the Room homepage coding challenge](./design/desktop-preview.jpg)
