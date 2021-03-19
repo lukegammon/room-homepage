@@ -188,6 +188,7 @@ body {
         display: flex;
         align-items: center;
         justify-content: center;
+        height: 55vh;
     }
     .focus-container {
         width: 60%;
@@ -195,11 +196,10 @@ body {
 
     .about {
         display: flex;
-        flex: 1;
-        max-height: 100%;
     }
     .about__main-container {
-        padding: 2rem;
+        padding: 1rem;
+        width: 105rem;
     }
     .splide {
         width: 60%;
